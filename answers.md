@@ -22,9 +22,10 @@ Action: I already had Virtual Box setup on my workstation, and decided to go wit
   Action: Initially here I had all kinds of issues getting this work with any of the 3 LAMP stack servers to work in my environment.  
   A combination of user creation and permissions haunted me.  I then decided to just go with the hashicorp/bionic64.  
   Easier to work with and by installing MySQL myself I had more control over the security settings for MySQL
-  
-  Result:
+   
     a. Configured MySQL.d yaml files initially for u: datadog, p: DataDog.123
     b. Added the user and password per the instructions, but received no data.
     c. Removed authentication helper and modifed the password to 'datadog123', updated the MySQL YAML.
     d. Restarted the DataDog-Agent service and voila'!
+
+  Result: MySQL accurately reporting it's metrics!
