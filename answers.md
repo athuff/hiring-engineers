@@ -1,4 +1,4 @@
-**Situation:** DataDog PreRequisites
+**Situation:** DataDog PreRequisites and Tagging assets
 
 **Task:** Spin up a small test environment to become familiar with DataDog
 
@@ -7,13 +7,18 @@
     a. VirtualBox 6.0.18, Vagrant 2.2.7, using 2 scotch/box provider (Ubuntu 18.0.4 LTS) and a Ruby on Rails image (boxesio/rails).
     b. Signed up for DataDog eval
     c. Got my agents installed and configured thd DataDog.yaml for basic support.
-    d. Ran into my first issue trying to get the YAML formatting right.  This format worked tags:
+    d. Ran into my first issue trying to get the YAML formatting right.  This format worked for creating tags:
     ["environment:production", "datacenter:houston", "owner:prodappteam"]
   
   **Result:** 3 servers reporting correctly
   
+  ![](images/1_agent_configured.png?raw=true)
   
+  ![](images/3_reporting.png?raw=true)
   
+  ![](images/2_vagrant.png?raw=true)
+  
+
   **Situation:** MySQL Integrations
   
   **Task:** Configure the DataDog-agent MySQL Integrations and a MySQL server to collection metrics into my DataDog instance.
