@@ -75,13 +75,15 @@
   4. Edited the sample dashboard python script.  
   
   **Result:**
+HUFF Dashboard
+https://p.datadoghq.com/sb/yyrx13dzpf1dw1jc-d51f453cf2747def49654923118f558f
 
 ![](images/huff_dashboard.png?raw=true)
 
 
   **Situation:** Create a monitor a monitor for the My_Metric data to send various alerts, warning and no data states.
   
-  **Task:** This was super straight forward to create the monitor and the thresholds.  Only issues here was to find the sweet spot of not being alerted too often, since we're using a random number generator.  The Anomaly function really helped here and I think I find the sweet spot.  The change schedule as also super easy to setup to prevent alerts during certain hours etc.  My biggest issue here, was getting blank data from the markup language inside the notification itself.  Both {{host.name}} and {{host.ip}} came in as blank every single alert.
+  **Task:** This was super straight forward to create the monitor and the thresholds.  Only issues here was to find the sweet spot of not being alerted too often, since we're using a random number generator.  The Anomalies function really helped here and I think I find the sweet spot.  The change schedule as also super easy to setup to prevent alerts during certain hours etc.  One issue here, was getting blank data from the markup language inside the notification itself.  Both {{host.name}} and {{host.ip}} came in as blank every single alert.  Second issue was the inconsistent method of saving an Outage time and it not follow through.  My email for my weekend outage came through, but not my daily outage email.
   
   **Actions:**
   1. Create a monitor based on my_metric.count.
@@ -96,18 +98,34 @@
  ![](images/monitor.png?raw=true)
  ![](images/downtime.png?raw=true)
  ![](images/downtime2.png?raw=true)
+ ![](images/downtime3.png?raw=true)
  
    **Situation:** Configure a sample application, configure ddtrace-run to collect events from the sample application
-   **Task:** This was fun, I had previously never worked with the Flask framework.  Once I configured the sample application, it took me a few minutes to determine I had to generate some traffice for the events to be collected.  Using curl I was able to generate a few events, enough to see some data.  I then created an additional python script to run curl multiple times to enhance the view of the dashboard.
+   
+   **Task:** This was fun, I had previously never worked with the Flask framework.  Once I configured the sample application, it took me a few minutes to determine I had to generate some traffice for the events to be collected.  Using curl I was able to generate a few events, enough to see some data.  I then created an additional python script to run curl multiple times to enhance the view of the dashboard.  The resulting data I then used to create a dashboard that combined the Flask APM data, the MySQL Avg CPU Utilization, My_Metric and the host Avg CPU Utilization.  This allowed me to pinpoint a CPU spike associated with the extra web traffic, that didn't correlate to the MySQL data or the My_Metric data.  
+   
    **Actions:**
+   1. Downloaded Flask and ddtrace via pip.
+   2. Updated the datadog.yaml file to turn on APM features.
+   3. Started the sample app utilizing ddtrace switches to give the app a service name.
+   4. Created a script to simulate web traffic to a few of the applications URL's.
+   
    **Result:**
+   APM & Infrastructure Dash
+   https://p.datadoghq.com/sb/yyrx13dzpf1dw1jc-906cb376b4647f81b0e0b1c6885c9f56
+      
+   **Uploads**
+   my_metric.py - code used to creath my_metric.count with random function.
+   HUFF_Dashboard - used to create the 3 way dashboard with overall count of my_metric and anomalies() function overlay.
+   my_app.py - sample code for the Flask app
+   traffic.py - my code to generate traffic and traces.
+  
+  **Bonus Question - Service vs Resource**
+  
+  A service is a collection of resources that are all related or support one another.  A Payroll Service could consist of webserver, docker container running separate functions, databases etc.
+  
+  **Final Question**
+  
+  With COVID19 in mind, there could a variety of uses to combine geographical data with performance data.  This would help isolate new performance issues that are being experienced around the globe from the surge in demand.  The hardest part of having a performance issue is finding the route cause of it.  With DataDog's deep insight into the infrastructure, applications and it's huge variety of integrations it's ideal to help reduce the MTTI (Meantime to Innocence).
    
-   
-   
-   
-   
-   **Situation:** 
-   **Task:**
-   **Actions:**
-   **Result:**
   
