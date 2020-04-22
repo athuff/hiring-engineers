@@ -110,9 +110,13 @@
       
 **Uploads**
 [my_metric.py](/scripts/my_metric.py) - code used to creath my_metric.count with random function.
+
 [HUFF_Dashboard.py](/scripts/HUFF_Dashboard.py) - used to create the 3 way dashboard
+
 [my_app.py](/scripts/my_app.py) - sample code for the Flask app
+
 [traffic.py](/scripts/traffic.py) - my code to generate traffic and traces.
+
 
 **Bonus Question - Service vs Resource**
   
