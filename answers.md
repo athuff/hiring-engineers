@@ -44,10 +44,10 @@
   **Task:** This one was tricky at first.  The sample code for the metric didn't want to run. I wasted too much time playing with the Python script, before getting Victor on the phone for an assist.  Simplified the code to just generate a singl random number.  In doing so, also ran into an issue I had seen before when calling the random funcion inside of Python.  Altered it to use random.randrange and it worked like a charm.
   
   **Actions:** 
-    1. Created the necessary folders inside of the etc/datadog-agent/conf.d directly.
-    2. Edited the my_metric yaml to update the minimum collection time to 45 seconds, for the **Bonus**
-    3. Edited and updated the my_metric python file to generate a randome number.
-    
+  1. Created the necessary folders inside of the etc/datadog-agent/conf.d directly.
+  2. Edited the my_metric yaml to update the minimum collection time to 45 seconds, for the **Bonus**
+  3. Edited and updated the my_metric python file to generate a randome number.
+      
   **Result:**  Success!
 
 ![](images/my_metric_yaml.png?raw=true)
@@ -75,8 +75,7 @@
   4. Edited the sample dashboard python script.  
   
   **Result:**
-HUFF Dashboard
-https://p.datadoghq.com/sb/yyrx13dzpf1dw1jc-d51f453cf2747def49654923118f558f
+[HUFF Dashboard](https://p.datadoghq.com/sb/yyrx13dzpf1dw1jc-d51f453cf2747def49654923118f558f)
 
 ![](images/huff_dashboard.png?raw=true)
 
@@ -111,14 +110,14 @@ https://p.datadoghq.com/sb/yyrx13dzpf1dw1jc-d51f453cf2747def49654923118f558f
    4. Created a script to simulate web traffic to a few of the applications URL's.
    
    **Result:**
-   APM & Infrastructure Dash
-   https://p.datadoghq.com/sb/yyrx13dzpf1dw1jc-906cb376b4647f81b0e0b1c6885c9f56
+   [APM & Infrastructure Data](https://p.datadoghq.com/sb/yyrx13dzpf1dw1jc-906cb376b4647f81b0e0b1c6885c9f56)
       
    **Uploads**
-   my_metric.py - code used to creath my_metric.count with random function.
-   HUFF_Dashboard - used to create the 3 way dashboard with overall count of my_metric and anomalies() function overlay.
-   my_app.py - sample code for the Flask app
-   traffic.py - my code to generate traffic and traces.
+   ![](images/downtime3.png?raw=true)
+   [my_metric.py](/scripts/my_metric.py) - code used to creath my_metric.count with random function.
+   [HUFF_Dashboard.py](/scripts/HUFF_Dashboard.py) - used to create the 3 way dashboard with overall count of my_metric and anomalies() function overlay.
+   [my_app.py](/scripts/my_app.py) - sample code for the Flask app
+   [traffic.py](/scripts/traffic.py) - my code to generate traffic and traces.
   
   **Bonus Question - Service vs Resource**
   
