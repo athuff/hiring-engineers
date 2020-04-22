@@ -5,7 +5,7 @@
 **Actions:**
 1. VirtualBox 6.0.18, Vagrant 2.2.7, using 2 scotch/box provider (Ubuntu 18.0.4 LTS) and a Ruby on Rails image (boxesio/rails)
 2. Signed up for DataDog eval
-3. Got my agents installed and configured thd DataDog.yaml for basic support
+3. Got my agents installed and configured the DataDog.yaml for basic support
 4. Added tags for datacenter, support team, and environment
   
 **Result:** 3 servers reporting correctly
@@ -110,7 +110,7 @@
       
 **Uploads**
 [my_metric.py](/scripts/my_metric.py) - code used to creath my_metric.count with random function.
-[HUFF_Dashboard.py](/scripts/HUFF_Dashboard.py) - used to create the 3 way dashboard with overall count of my_metric and anomalies function overlay.
+[HUFF_Dashboard.py](/scripts/HUFF_Dashboard.py) - used to create the 3 way dashboard
 [my_app.py](/scripts/my_app.py) - sample code for the Flask app
 [traffic.py](/scripts/traffic.py) - my code to generate traffic and traces.
 
