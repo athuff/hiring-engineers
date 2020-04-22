@@ -7,18 +7,17 @@
     1. VirtualBox 6.0.18, Vagrant 2.2.7, using 2 scotch/box provider (Ubuntu 18.0.4 LTS) and a Ruby on Rails image (boxesio/rails).
     2. Signed up for DataDog eval
     3. Got my agents installed and configured thd DataDog.yaml for basic support.
-    4. Ran into my first issue trying to get the YAML formatting right.  This format worked for creating tags:
-    ["environment:production", "datacenter:houston", "owner:prodappteam"]
+    4. Added tags for datacenter, support team, and environment.
   
   **Result:** 3 servers reporting correctly
   
   ![](images/1_agent_configured.png?raw=true)
   
-  ![](images/3_reporting.png?raw=true)
-  
   ![](images/2_vagrant.png?raw=true)
   
   ![](images/tags.png?raw=true)
+  
+  ![](images/3_reporting.png?raw=true)
   
 
   **Situation:** Configure the DataDog-agent MySQL Integrations and a MySQL server to collection metrics into my DataDog instance.
@@ -56,7 +55,7 @@
 
 ![](images/my_metric_dash.png?raw=true)
 
-  **Situation:** Utilize teh DataDog API to create a Timeboard with various custom metrics to demonstrate the ability to dynamically create associated dashboards to suit various needs.  The would demonstrate the flexibility of DataDog so that it could presumably be incorporated into a variety of Devops CI/CD processes.
+  **Situation:** Utilize the DataDog API to create a Timeboard with various custom metrics to demonstrate the ability to dynamically create associated dashboards to suit various needs.  The would demonstrate the flexibility of DataDog so that it could presumably be incorporated into a variety of Devops CI/CD processes.
   
   **Task:** I created the 3 separate dashboards manually at first, so I could I review their JSON files and figure out what properties were associated with each widget type.  Then using a sample script, cobbled them all together in a single dashboard.  Hardest part of this was getting the count dashboard to display properly and trying to figure what option to use on the Anomaly function.
   
@@ -113,12 +112,11 @@
    [APM & Infrastructure Data](https://p.datadoghq.com/sb/yyrx13dzpf1dw1jc-906cb376b4647f81b0e0b1c6885c9f56)
       
    **Uploads**
-   ![](images/downtime3.png?raw=true)
-   [my_metric.py](/scripts/my_metric.py) - code used to creath my_metric.count with random function.
-   [HUFF_Dashboard.py](/scripts/HUFF_Dashboard.py) - used to create the 3 way dashboard with overall count of my_metric and anomalies() function overlay.
-   [my_app.py](/scripts/my_app.py) - sample code for the Flask app
-   [traffic.py](/scripts/traffic.py) - my code to generate traffic and traces.
-  
+[my_metric.py](/scripts/my_metric.py) - code used to creath my_metric.count with random function.
+[HUFF_Dashboard.py](/scripts/HUFF_Dashboard.py) - used to create the 3 way dashboard with overall count of my_metric and anomalies() function overlay.
+[my_app.py](/scripts/my_app.py) - sample code for the Flask app
+[traffic.py](/scripts/traffic.py) - my code to generate traffic and traces.
+
   **Bonus Question - Service vs Resource**
   
   A service is a collection of resources that are all related or support one another.  A Payroll Service could consist of webserver, docker container running separate functions, databases etc.
