@@ -105,10 +105,12 @@
    
 **Result:**
    [APM & Infrastructure Data](https://p.datadoghq.com/sb/yyrx13dzpf1dw1jc-906cb376b4647f81b0e0b1c6885c9f56)
+    ![](images/apmservice.png?raw=true)
+     ![](images/apmcombinedash.png?raw=true)
       
 **Uploads**
 [my_metric.py](/scripts/my_metric.py) - code used to creath my_metric.count with random function.
-[HUFF_Dashboard.py](/scripts/HUFF_Dashboard.py) - used to create the 3 way dashboard with overall count of my_metric and anomalies() function overlay.
+[HUFF_Dashboard.py](/scripts/HUFF_Dashboard.py) - used to create the 3 way dashboard with overall count of my_metric and anomalies function overlay.
 [my_app.py](/scripts/my_app.py) - sample code for the Flask app
 [traffic.py](/scripts/traffic.py) - my code to generate traffic and traces.
 
